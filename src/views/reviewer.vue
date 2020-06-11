@@ -1,0 +1,50 @@
+<template>
+  <div class="reviewer container">
+    <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="Hash">Hash</label>
+      <input type="text" class="form-control" id="Hash" placeholder="Hash">
+    </div>
+    <div class="form-group">
+      <label for="HashCT">Hash(Clear Text)</label>
+      <input type="text" class="form-control" id="HashCT" placeholder="Hash(Clear Text)">
+    </div>
+    <div class="form-group">
+      <label for="Author">Author-list</label>
+      <input type="text" class="form-control" id="Author" placeholder="Author-list">
+    </div>
+    <div class="form-group">
+      <label for="CoAuthor">Corr-author</label>
+      <input type="text" class="form-control" id="CoAuthor" placeholder="Corr-author">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  </div>
+</template>
+<script>
+export default {
+  name: 'reviewer',
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+    
+  }
+}
+</script>
+
+<style>
+.reviewer{
+  text-align: left;
+  background-color: white;
+  padding: 3% 3%;
+  border-radius: 1em;
+}
+</style>
