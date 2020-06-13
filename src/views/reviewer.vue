@@ -42,6 +42,7 @@ export default {
 
 <style>
 .reviewer{
+  margin-top: 10vh;
   text-align: left;
   background-color: white;
   padding: 3% 3%;
