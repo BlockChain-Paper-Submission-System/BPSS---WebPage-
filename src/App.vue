@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/Author">Author</router-link> |
-      <router-link to="/Reviewer">Reviewer</router-link>
+      <img class="logo" src="./assets/blockchain.svg" width="70" height="70" alt="">
+      <div class="nav-link">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/Author">Author</router-link> |
+        <router-link to="/Reviewer">Reviewer</router-link>
+      </div>
     </div>
     <router-view/>
   </div>
@@ -20,15 +23,23 @@ body {
   background-color: black;
 }
 #app{
-
+  margin: 0;
+}
+.logo{
+  position: absolute;
+  left: 50vw;
+  top: 15px;
+  transform: translate(-250px,-10%);
 }
 #nav {
-  width: 70vw;
+  /* width: 70vw; */
   padding: 30px 0px;
   width: 100vw;
   background-color: aliceblue;
 }
-
+.nav-link{
+  margin: 0 auto;
+}
 #nav a {
   font-weight: bold;
   color: #2c3e50;

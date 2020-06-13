@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="backgroud">
-      <h1 class="title">BlockChain Paper Submission</h1>
+      <h1 class="title">BlockChain Paper Submission System</h1>
       </div>
       <div class="intro">
         <h2>Why BPSS?</h2>
@@ -42,10 +42,10 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.home{}
+<style lang="scss">
 .title{
   color: antiquewhite;
+  padding: 1rem;
 }
 .backgroud{
   max-width: 70vw;

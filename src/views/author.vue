@@ -51,7 +51,6 @@ export default {
       this.txId = null;
     },
     submit(){
-      console.log(123)
       apiAdd({
         para1:this.submitContent.hashCT,
         para2:this.submitContent.hash,
@@ -68,7 +67,7 @@ export default {
   }
 }
 </script>
-<style>
+<style> 
 .author{
   text-align: left;
   background-color: white;
