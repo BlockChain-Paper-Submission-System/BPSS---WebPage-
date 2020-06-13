@@ -21,7 +21,7 @@
       <label for="CoAuthor">Corr-author</label>
       <input type="text" class="form-control" id="CoAuthor" placeholder="Corr-author">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" @click="submit">Submit</button>
 </form>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
         para5:this.submitContent.coAuthor
       })
       .then(response => {
-          this.listData = response.data;
+          this.listData = response;
         })
       .catch((error) => { console.error(error) })
     }

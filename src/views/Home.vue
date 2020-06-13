@@ -1,6 +1,33 @@
 <template>
   <div class="home">
-    <h1 class="title">BlockChain Paper Submission</h1>
+    <div class="backgroud">
+      <h1 class="title">BlockChain Paper Submission</h1>
+      </div>
+      <div class="intro">
+        <h2>Why BPSS?</h2>
+        <p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </div>
   </div>
 </template>
 
@@ -16,15 +43,26 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.home{}
 .title{
   color: antiquewhite;
 }
-.home{
+.backgroud{
+  max-width: 70vw;
+  min-width: 500px;
   margin: 0 auto;
-  background:url("../assets/BGBC.jpg");
+  background:url("../assets/BGBC.jpg")center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   height: 70vh;
+}
+.intro{
+  margin: 0 auto;
+  background-color: white;
+  max-width: 70vw;
+  h2{
+    padding: 1rem;
+  }
 }
 </style>
