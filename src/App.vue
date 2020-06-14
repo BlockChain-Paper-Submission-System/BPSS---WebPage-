@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img class="logo" src="./assets/blockchain.svg" width="70" height="70" alt="">
+      <img class="logo" src="./assets/blockchain.svg" width="70" height="70" alt />
       <div class="nav-link">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/Author">Author</router-link> |
+        <router-link to="/">Home</router-link>
+        <router-link to="/Author">Author</router-link>
         <router-link to="/Reviewer">Reviewer</router-link>
       </div>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style>
-
+<style lang="scss">
 body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,14 +21,14 @@ body {
   color: #2c3e50;
   background-color: black;
 }
-#app{
+#app {
   margin: 0;
 }
-.logo{
+.logo {
   position: absolute;
   left: 50vw;
   top: 15px;
-  transform: translate(-250px,-10%);
+  transform: translate(-250px, -10%);
 }
 #nav {
   /* width: 70vw; */
@@ -37,12 +36,17 @@ body {
   width: 100vw;
   background-color: aliceblue;
 }
-.nav-link{
+.nav-link {
   margin: 0 auto;
 }
 #nav a {
+  text-decoration: none;
+  padding-right: 1rem;
   font-weight: bold;
   color: #2c3e50;
+}
+#nav a:hover {
+  opacity: 70%;
 }
 
 #nav a.router-link-exact-active {
