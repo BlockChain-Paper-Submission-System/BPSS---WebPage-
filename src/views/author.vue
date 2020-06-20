@@ -7,10 +7,12 @@
     </div>
     <form>
     <div class="form-group">
-      <label for="exampleFormControlFile1">Example file input</label>
+      <label for="exampleFormControlFile1">Upload your paper!</label>
     <input type="file" class="form-control-file" id="filePaper" @change="selectedFile()">
-    <button @click="uploadFile()">send!</button>
     </div>
+    <button class="btn btn-primary" @click="uploadFile()">send!</button>
+    <br>
+    <br>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -73,8 +75,9 @@ export default {
       )
      },
     uploadFile(){
+    let file = document.querySelector('#filePaper');
         apiUpload({
-        title: '1213313',
+        title: file.files[0].name,
         content: this.filePaper
       })
       .then(res =>{
