@@ -9,6 +9,7 @@
     <div class="form-group">
       <label for="exampleFormControlFile1">Example file input</label>
     <input type="file" class="form-control-file" id="filePaper" @change="selectedFile()">
+    <button @click="uploadFile()">send!</button>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
