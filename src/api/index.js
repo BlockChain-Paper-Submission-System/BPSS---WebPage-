@@ -6,3 +6,4 @@ const AppDomain = axios.create({
 
   export const apiAdd = data => AppDomain.post('/add', data); 
   export const apiFind = data => AppDomain.post('/find', data);
+  export const apiUpload = data => AppDomain.post('/upload', data);

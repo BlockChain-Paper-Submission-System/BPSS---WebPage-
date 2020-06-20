@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div class="backgroud">
+      <div class="filter"> 
       <h1 class="title">BlockChain Paper Submission System</h1>
       <h2 class="subTitle">Powered by</h2>
       <div class="tech">
@@ -11,6 +12,7 @@
       </div>
       <div class="tech">
         <img src="../assets/node.png" alt />
+      </div>
       </div>
     </div>
     <div class="intro">
@@ -32,6 +34,7 @@ export default {
 };
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 @keyframes init {
   from {
     opacity: 0%;
@@ -43,6 +46,7 @@ export default {
 %title {
   color: antiquewhite;
   padding: 1rem;
+  font-family: 'MuseoModerno', cursive;
 }
 .title {
   animation: init 1.5s;
@@ -58,15 +62,16 @@ export default {
   display: inline-block;
   width: 30%;
   #vue {
-    width: 50%;
+    width: 30%;
   }
   img {
-    width: 70%;
+    width: 42%;
   }
 }
 .backgroud {
-  max-width: 70vw;
-  min-width: 500px;
+  width: 100vw;
+  // max-width: 70vw;
+  // min-width: 500px;
   margin: 0 auto;
   background: url("../assets/BGBC.jpg") center center;
   background-attachment: fixed;
@@ -74,10 +79,15 @@ export default {
   background-size: cover;
   height: 70vh;
 }
+.filter{
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+}
 .intro {
   margin: 0 auto;
   background-color: white;
-  max-width: 70vw;
+  max-width: 100vw;
   h2 {
     padding: 1rem;
   }

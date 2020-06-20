@@ -7,6 +7,10 @@
     </div>
     <form>
     <div class="form-group">
+      <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" id="filePaper" @change="selectedFile()">
+    </div>
+    <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
@@ -31,11 +35,13 @@
   </div>
 </template>
 <script>
-import { apiFind , apiAdd } from "@/api/index.js"; 
+import { apiFind , apiAdd , apiUpload} from "@/api/index.js"; 
 export default {
   name: 'author',
   data(){
     return{
+      paperTitle:null,
+      filePaper:null,
       txId:null,
       submitContent:{
         hashCT:null,
@@ -47,6 +53,31 @@ export default {
     }
   },
   methods:{
+    selectedFile(){
+      let file = document.querySelector('#filePaper');
+      this.filePaper = new FormData();
+      this.filePaper.append("PaperFile", file.files[0])
+    },
+    uploadFile(){
+      let file = document.querySelector('#filePaper');
+      if(file.files.length == 0){
+        alert(`請上傳檔案！`);
+      }
+      else{
+        apiUpload({
+        title: this.paperTitle,
+        file: this.filePaper
+      })
+      .then(res =>{
+        console.log(`file was uploaded!`)
+      })
+      .catch(
+        err =>{
+          console.log(`Fuck`)
+        }
+      )
+      }
+    },
     hideReminder(){
       this.txId = null;
     },
