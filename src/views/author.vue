@@ -48,41 +48,53 @@ export default {
         hashCT:null,
         hash:null,
         authorList:null,
-        status:'sent',
+        status:null,
         coAuthor:null
       }
     }
   },
   methods:{
-    selectedFile(){
+    async selectedFile(){
       let file = document.querySelector('#filePaper');
-      this.filePaper = new FormData();
-      this.filePaper.append("PaperFile", file.files[0])
-    },
-    uploadFile(){
-      let file = document.querySelector('#filePaper');
-      if(file.files.length == 0){
-        alert(`請上傳檔案！`);
+      let pdf = file.files[0]
+      var reader = new FileReader();
+      await reader.readAsBinaryString(pdf);
+      new Promise((res, rej)=>{
+        reader.onload = function(){
+        let file =  reader.result;
+        res(btoa(`${file}`));
       }
-      else{
+      })
+      .then(
+        res =>{
+          // console.log(res)
+          this.filePaper = res;
+        }
+      )
+     },
+    uploadFile(){
         apiUpload({
-        title: this.paperTitle,
-        file: this.filePaper
+        title: '1213313',
+        content: this.filePaper
       })
       .then(res =>{
-        console.log(`file was uploaded!`)
+        this.submitContent.status = res.data;
+        alert(res.data)
       })
       .catch(
         err =>{
-          console.log(`Fuck`)
+          console.log(`err_code:`,err)
         }
       )
-      }
     },
     hideReminder(){
       this.txId = null;
     },
     submit(){
+      if(this.submitContent.status==null){
+        alert("請先上傳檔案！")
+      }
+      else{
       apiAdd({
         para1:this.submitContent.hashCT,
         para2:this.submitContent.hash,
@@ -91,10 +103,11 @@ export default {
         para5:this.submitContent.coAuthor
       })
       .then(response => {
-          // console.log(response)
+          this.submitContent.status = null;
           this.txId = response.data;
         })
       .catch((error) => { console.error(error) })
+    }
     }
   }
 }
