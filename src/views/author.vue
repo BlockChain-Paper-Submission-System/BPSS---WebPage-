@@ -15,7 +15,11 @@
     <br>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="submitContent.mail">
+    </div>
+    <div class="form-group">
+      <label for="ORCID">ORCID</label>
+      <input type="text" class="form-control" id="ORCID" placeholder="ORCID" v-model="submitContent.orcid">
     </div>
     <div class="form-group">
       <label for="Hash">Hash</label>
@@ -51,7 +55,9 @@ export default {
         hash:null,
         authorList:null,
         status:null,
-        coAuthor:null
+        coAuthor:null,
+        mail:null,
+        orcid:null
       }
     }
   },
@@ -69,7 +75,6 @@ export default {
       })
       .then(
         res =>{
-          // console.log(res)
           this.filePaper = res;
         }
       )
@@ -103,7 +108,9 @@ export default {
         para2:this.submitContent.hash,
         para3:this.submitContent.authorList,
         para4:this.submitContent.status,
-        para5:this.submitContent.coAuthor
+        para5:this.submitContent.coAuthor,
+        para6:this.submitContent.orcid,
+        para7:this.submitContent.mail
       })
       .then(response => {
           this.submitContent.status = null;
