@@ -6,6 +6,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/Author">Author</router-link>
         <router-link to="/Reviewer">Reviewer</router-link>
+        <router-link to="/Query">Query</router-link>
       </div>
     </div>
     <router-view />

@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const va = axios
 const AppDomain = axios.create({
-    baseURL: 'http://localhost:8081/' //your api domain
+    baseURL: 'http://localhost:8082/' //your api domain
   });
   const FlaskDomain = axios.create({
     baseURL: 'http://140.124.73.74:58088/' //your api domain

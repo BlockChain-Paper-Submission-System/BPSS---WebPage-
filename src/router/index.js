@@ -19,6 +19,11 @@ Vue.use(VueRouter)
     path: '/Reviewer',
     name: 'Reviewer',
     component: () => import('../views/reviewer.vue')
+  },
+  {
+    path: '/Query',
+    name: 'Query',
+    component: () => import('../views/query.vue')
   }
   
 ]
