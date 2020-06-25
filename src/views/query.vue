@@ -1,8 +1,9 @@
 <template>
 <div class="query">
     <div class="result" v-if="result!==null">
-    <p @click="close"  class="close">x</p>
-      <p v-for="(item,index) in result">
+    <span @click="close"  class="close">x</span>
+    <h2>Result</h2>
+      <p :key="result.orcid" v-for="(item,index) in result">
           {{index}}: {{item}}
       </p>
     </div>
@@ -23,8 +24,8 @@ export default {
     data(){
         return{
             txId: null,
-            result: null
-            // result: {"authorList":"o","coAuthor":"p","execTime":"2020-06-25T09:35:19.897Z","fileHash":"o","hash":"i","mail":"liaojack8@yahoo.com.tw","orcid":"i","reqTime":"2020-06-25T09:35:19.765Z","status":"This paper has been submitted before."}
+            // result: null
+            result: {"authorList":"o","coAuthor":"p","execTime":"2020-06-25T09:35:19.897Z","fileHash":"o","hash":"i","mail":"liaojack8@yahoo.com.tw","orcid":"i","reqTime":"2020-06-25T09:35:19.765Z","status":"This paper has been submitted before."}
         }
     },
     methods:{
@@ -34,7 +35,6 @@ export default {
             })
             .then(res =>{
                 this.result = res.data;
-                // console.log(res.data)
             })
             .catch(
                 err =>{
@@ -82,6 +82,9 @@ export default {
   border-radius: 1rem;
   .close{
       float: right;
+      &:hover{
+          color: red;
+      }
   }
 }
 </style>

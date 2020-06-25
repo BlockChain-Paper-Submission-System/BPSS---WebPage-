@@ -8,4 +8,5 @@ const AppDomain = axios.create({
   });
   export const apiAdd = data => AppDomain.post('/add', data); 
   export const apiFind = data => AppDomain.post('/find', data);
+  export const apiReview = data => AppDomain.post('/addComment', data);
   export const apiUpload = data => FlaskDomain.post('/', data);
