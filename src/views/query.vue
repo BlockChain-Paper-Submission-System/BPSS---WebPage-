@@ -1,7 +1,8 @@
 <template>
 <div class="query">
     <div class="result" v-if="result!==null">
-      <p :key="result" v-for="(item,index) in result">
+    <p @click="close"  class="close">x</p>
+      <p v-for="(item,index) in result">
           {{index}}: {{item}}
       </p>
     </div>
@@ -32,7 +33,8 @@ export default {
                 name: this.txId
             })
             .then(res =>{
-                this.result = res;
+                this.result = res.data;
+                // console.log(res.data)
             })
             .catch(
                 err =>{
@@ -41,10 +43,13 @@ export default {
             )
             .finally(
                 ()=>{
-                    this.result = null;
+                    this.txId = null;
                 }
             )
-                }
+                },
+            close(){
+                this.result = null;
+            }
     }
 }
 </script>
@@ -75,5 +80,8 @@ export default {
   text-align: left;
   background-color:rgba(255, 255, 255, 1.0);
   border-radius: 1rem;
+  .close{
+      float: right;
+  }
 }
 </style>
