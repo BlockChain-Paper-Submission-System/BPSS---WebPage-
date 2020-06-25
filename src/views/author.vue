@@ -103,14 +103,16 @@ export default {
         alert("請先上傳檔案！")
       }
       else{
+      let reqTime = new Date();
       apiAdd({
-        para1:this.submitContent.hashCT,
-        para2:this.submitContent.hash,
-        para3:this.submitContent.authorList,
-        para4:this.submitContent.status,
-        para5:this.submitContent.coAuthor,
-        para6:this.submitContent.orcid,
-        para7:this.submitContent.mail
+        fileHash:this.submitContent.hashCT,
+        hash:this.submitContent.hash,
+        authorList:this.submitContent.authorList,
+        status:this.submitContent.status,
+        coAuthor:this.submitContent.coAuthor,
+        orcid:this.submitContent.orcid,
+        mail:this.submitContent.mail,
+        reqTime: reqTime
       })
       .then(response => {
           this.submitContent.status = null;
