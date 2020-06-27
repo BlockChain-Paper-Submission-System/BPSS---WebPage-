@@ -5,6 +5,7 @@
       <div class="nav-link">
         <router-link to="/">Home</router-link>
         <router-link to="/Author">Author</router-link>
+        <router-link to="/Editor">Editor</router-link>
         <router-link to="/Reviewer">Reviewer</router-link>
         <router-link to="/Query">Query</router-link>
       </div>

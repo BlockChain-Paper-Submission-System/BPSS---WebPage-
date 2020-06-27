@@ -12,7 +12,7 @@
       <label for="txId">txId</label>
       <input type="text" class="form-control" id="txId" placeholder="txId" v-model="txId">
     </div>
-    <button type="submit" class="btn btn-primary" @click="query">Submit</button>
+    <button type="submit" class="btn btn-primary" @click="query">Search</button>
 </form>
 </div>
 </template>
