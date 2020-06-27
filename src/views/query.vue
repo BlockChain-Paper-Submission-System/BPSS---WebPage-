@@ -24,8 +24,8 @@ export default {
     data(){
         return{
             txId: null,
-            // result: null
-            result: {"authorList":"o","coAuthor":"p","execTime":"2020-06-25T09:35:19.897Z","fileHash":"o","hash":"i","mail":"liaojack8@yahoo.com.tw","orcid":"i","reqTime":"2020-06-25T09:35:19.765Z","status":"This paper has been submitted before."}
+            result: null
+            // result: {"authorList":"o","coAuthor":"p","execTime":"2020-06-25T09:35:19.897Z","fileHash":"o","hash":"i","mail":"liaojack8@yahoo.com.tw","orcid":"i","reqTime":"2020-06-25T09:35:19.765Z","status":"This paper has been submitted before."}
         }
     },
     methods:{

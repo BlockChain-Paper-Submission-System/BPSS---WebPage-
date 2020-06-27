@@ -104,18 +104,19 @@ export default {
       }
       else{
       let reqTime = new Date();
+      let status = this.submitContent.status;
+      this.submitContent.status = null;
       apiAdd({
         fileHash:this.submitContent.hashCT,
         hash:this.submitContent.hash,
         authorList:this.submitContent.authorList,
-        status:this.submitContent.status,
+        status:status,
         coAuthor:this.submitContent.coAuthor,
         orcid:this.submitContent.orcid,
         mail:this.submitContent.mail,
         reqTime: reqTime
       })
       .then(response => {
-          this.submitContent.status = null;
           this.txId = response.data;
         })
       .catch((error) => { console.error(error) })

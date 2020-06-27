@@ -9,10 +9,10 @@
       <label for="Reviewer">Reviewer</label>
       <input type="text" class="form-control" id="Reviewer" placeholder="Reviewer" v-model="submitContent.reviewer">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="submitContent.email">
-    </div>
+    </div> -->
     <div class="form-group">
       <label for="ORCID">ORCID</label>
       <input type="text" class="form-control" id="ORCID" placeholder="ORCID" v-model="submitContent.orcid">
@@ -40,7 +40,7 @@ export default {
       submitContent:{
         txId:null,
         reviewer:null,
-        email:null,
+        email:'do not need',
         orcid:null,
         hashCm:null,
         comment:null,
