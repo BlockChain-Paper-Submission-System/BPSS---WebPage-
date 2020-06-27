@@ -25,6 +25,13 @@
       <label for="Comment">Comment</label>
       <input type="text" class="form-control" id="Comment" placeholder="Comment" v-model="submitContent.comment">
     </div>
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Status select</label>
+    <select class="form-control" id="statusSelect" v-model="submitContent.status">
+      <option>accept</option>
+      <option>reject</option>
+    </select>
+  </div>
     <button type="submit" class="btn btn-primary" @click="submit">Submit</button>
 </form>
 
