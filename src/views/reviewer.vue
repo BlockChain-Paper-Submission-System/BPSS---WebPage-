@@ -1,5 +1,10 @@
 <template>
   <div class="reviewer container">
+      <div class="reminder" v-if="txId!==null">
+      <h2>success!</h2>
+      <p>Your transaction id is:{{txId}}</p>
+      <button @click="hideReminder">OK!</button>
+    </div>
     <form>
       <div class="form-group">
       <label for="TxId">TxId(paper)</label>
@@ -56,6 +61,9 @@ export default {
     }
   },
   methods:{
+   hideReminder(){
+    this.txId = null;
+  },
   submit(){
       let reqTime = new Date();
       apiReview({
@@ -84,5 +92,18 @@ export default {
   background-color: white;
   padding: 3% 3%;
   border-radius: 1em;
+}
+.reminder{
+  padding: 5vh 8vw;
+  box-shadow:3px 3px 3px 3px #cccccc;
+  z-index: 100;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color:rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
 }
 </style>
