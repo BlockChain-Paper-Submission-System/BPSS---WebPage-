@@ -151,4 +151,17 @@ methods:{
   margin: auto;
   margin-top: 10vh;
 }
+.reminder{
+  padding: 5vh 8vw;
+  box-shadow:3px 3px 3px 3px #cccccc;
+  z-index: 100;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color:rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+}
 </style>
