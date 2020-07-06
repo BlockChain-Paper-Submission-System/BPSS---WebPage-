@@ -14,10 +14,6 @@
       <label for="Reviewer">Reviewer</label>
       <input type="text" class="form-control" id="Reviewer" placeholder="Reviewer" v-model="submitContent.reviewer">
     </div>
-    <!-- <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="submitContent.email">
-    </div> -->
     <div class="form-group">
       <label for="ORCID">ORCID</label>
       <input type="text" class="form-control" id="ORCID" placeholder="ORCID" v-model="submitContent.orcid">
@@ -31,7 +27,7 @@
       <input type="text" class="form-control" id="Comment" placeholder="Comment" v-model="submitContent.comment">
     </div>
     <div class="form-group">
-    <label for="exampleFormControlSelect1">Status select</label>
+    <label for="statusSelect">Status select</label>
     <select class="form-control" id="statusSelect" v-model="submitContent.status">
       <option>accept</option>
       <option>reject</option>
