@@ -106,7 +106,7 @@ methods:{
     let reqTime = new Date();
     let vm = this.assignContent;
       editorAssign({
-        txId: vm.txIdPaper,
+        paperTxId: vm.txIdPaper,
         reviewer1: vm.reviewer1,
         email1: vm.r1Email,
         reviewer2: vm.reviewer2,
@@ -124,7 +124,7 @@ methods:{
     let reqTime = new Date();
     let vm = this.finalProcess;
       finalProcess({
-        txId: vm.txId,
+        paperTxId: vm.txId,
         author: vm.author,
         status: vm.status,
         mail: vm.authorEmail,
