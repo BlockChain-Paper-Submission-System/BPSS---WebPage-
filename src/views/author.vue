@@ -104,6 +104,7 @@ export default {
       }
       else{
       let reqTime = new Date();
+      let reqTimeForTest = new Date().getTime();
       let status = this.submitContent.status;
       this.submitContent.status = null;
       apiAdd({
@@ -114,7 +115,8 @@ export default {
         coAuthor:this.submitContent.coAuthor,
         orcid:this.submitContent.orcid,
         mail:this.submitContent.mail,
-        reqTime: reqTime
+        reqTime: reqTime,
+        reqTimeForTest: reqTimeForTest
       })
       .then(response => {
           this.txId = response.data;
