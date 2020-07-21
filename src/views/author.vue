@@ -3,9 +3,17 @@
       <div class="reminder" v-if="txId!==null">
       <h2>success!</h2>
       <p>Your transaction id is:{{txId}}</p>
+      <p>Your submission signature is:{{ss}}</p>
       <button @click="hideReminder">OK!</button>
     </div>
     <form>
+    <div class="form-group">
+    <label for="statusSelect">Conference or Journal?</label>
+    <select class="form-control" id="statusSelect" v-model="submitContent.conf">
+      <option>Conference</option>
+      <option>Journal</option>
+    </select>
+    </div>
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload your paper!</label>
     <input type="file" class="form-control-file" id="filePaper" @change="selectedFile()">
@@ -49,8 +57,10 @@ export default {
     return{
       paperTitle:null,
       filePaper:null,
+      ss:null, //submission signature
       txId:null,
       submitContent:{
+        conf:null,
         hashCT:null,
         hash:null,
         authorList:null,
@@ -97,6 +107,7 @@ export default {
     },
     hideReminder(){
       this.txId = null;
+      this.ss = null;
     },
     submit(){
       if(this.submitContent.status==null){
@@ -108,6 +119,7 @@ export default {
       let status = this.submitContent.status;
       this.submitContent.status = null;
       apiAdd({
+        conf:this.submitContent.conf,
         fileHash:this.submitContent.hashCT,
         hash:this.submitContent.hash,
         authorList:this.submitContent.authorList,
@@ -119,7 +131,8 @@ export default {
         reqTimeForTest: reqTimeForTest
       })
       .then(response => {
-          this.txId = response.data;
+          this.txId = response.data.txId;
+          this.ss = response.data.ss;
         })
       .catch((error) => { console.error(error) })
     }
