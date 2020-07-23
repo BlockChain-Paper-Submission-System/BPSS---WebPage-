@@ -22,6 +22,10 @@
     <br>
     <br>
     <div class="form-group">
+      <label for="SS">Submission signature</label>
+      <input type="text" class="form-control" id="SS" placeholder="Submission signature" v-model="submitContent.ss">
+    </div>
+    <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="submitContent.mail">
     </div>
@@ -57,9 +61,9 @@ export default {
     return{
       paperTitle:null,
       filePaper:null,
-      ss:null, //submission signature
       txId:null,
       submitContent:{
+        ss:null, //submission signature
         conf:null,
         hashCT:null,
         hash:null,
@@ -107,7 +111,6 @@ export default {
     },
     hideReminder(){
       this.txId = null;
-      this.ss = null;
     },
     submit(){
       if(this.submitContent.status==null){
@@ -127,12 +130,12 @@ export default {
         coAuthor:this.submitContent.coAuthor,
         orcid:this.submitContent.orcid,
         mail:this.submitContent.mail,
+        ss:this.submitContent.ss,
         reqTime: reqTime,
         reqTimeForTest: reqTimeForTest
       })
       .then(response => {
           this.txId = response.data.txId;
-          this.ss = response.data.ss;
         })
       .catch((error) => { console.error(error) })
     }
