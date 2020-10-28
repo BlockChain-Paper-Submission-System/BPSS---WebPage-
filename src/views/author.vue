@@ -34,11 +34,11 @@
       <input type="text" class="form-control" id="ORCID" placeholder="ORCID" v-model="submitContent.orcid">
     </div>
     <div class="form-group">
-      <label for="Hash">Hash</label>
-      <input type="text" class="form-control" id="Hash" placeholder="Hash" v-model="submitContent.hash">
+      <label for="Hash">ciphertext</label>
+      <input type="text" class="form-control" id="Hash" placeholder="ciphertext" v-model="submitContent.hash">
     </div>
     <div class="form-group">
-      <label for="HashCT">Hash(Clear Text)</label>
+      <label for="HashCT">Hash (Clear Text)</label>
       <input type="text" class="form-control" id="HashCT" placeholder="Hash(Clear Text)" v-model="submitContent.hashCT">
     </div>
     <div class="form-group">
